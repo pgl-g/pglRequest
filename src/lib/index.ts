@@ -2,10 +2,13 @@ import axios, { AxiosInstance, RawAxiosRequestHeaders, AxiosHeaders } from 'axio
 
 import { LHRequestInterceptors, MethodsHeaders, LHRequestConfig } from './types'
 
+import AxiosCancel from '../helper/axiosCancel' 
 
 const config = {
   timeout: 10000,
 }
+
+const axiosCancel = new AxiosCancel()
 
 class PglAxios {
   instance: AxiosInstance;
@@ -19,6 +22,9 @@ class PglAxios {
      * 请求拦截
     */
     this.instance.interceptors.request.use((config: any) => {
+
+      // 在拦截时进行处理
+      axiosCancel.addPending(config);
       return {
         ...config,
         headers: {
