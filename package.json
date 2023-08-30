@@ -2,8 +2,11 @@
   "name": "pglrequest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "/dist/index.es.js",
+  "type": "dist/src/index.d.ts",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,5 +18,9 @@
   "devDependencies": {
     "axios": "^1.5.0",
     "qs": "^6.11.2"
+  },
+  "dependencies": {
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.3"
   }
 }
