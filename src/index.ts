@@ -1,5 +1,10 @@
 
 
-import PglAxios from '@/lib'
+import pglAxios from '@/lib'
+import pglAxiosCancel from '@/helper/axiosCancel'
 
-export default PglAxios;
+
+export {
+    pglAxios,
+    pglAxiosCancel
+}
